@@ -1,0 +1,13 @@
+<!DOCKTYPE html>
+<html>
+<head lang='en'>
+
+</head>
+<body>
+
+{% block content %}
+<h1>base</h1>
+{% endblock %}
+
+</body>
+</html>
