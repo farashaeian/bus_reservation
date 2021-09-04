@@ -1,5 +1,15 @@
-{% extends 'base.html' %}
+{% extends "bus_site/base.html" %}
 
 {% block content %}
-<h1>home</h1>
+
+<h1>Bus Reservation Home</h1>
+	<p>Welcome to <em>Bus Reservation</em>, a very basic Django website</p>
+<h2>Dynamic content</h2>
+	<p>The website has the following record counts:</p>
+	<ul>
+		<li><strong>Buses:</strong> {{ num_buses }}</li>
+		<li><strong>Users:</strong> {{ num_users }}</li>
+		<li><strong>Reservations:</strong> {{ num_reservations }}</li>
+	</ul>
+
 {% endblock %}

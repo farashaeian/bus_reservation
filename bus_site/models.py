@@ -10,13 +10,13 @@ class Bus(models.Model):
     time = models.TimeField()
 
     def __str__(self):
-        return self.id
+        return '%s From %s To %s' %(self.id,self.source,self.dest)
 
 
 class User(models.Model):
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     name = models.CharField(max_length=50)
-    password = models.CharField(max_length=12)
+    password = models.CharField(max_length=12, help_text='Maximum 12 characters')
 
     def __str__(self):
         return self.email
@@ -34,4 +34,4 @@ class Book(models.Model):
     status = models.CharField(choices=TICKET_STATUSES, default=BOOKED, max_length=2)
 
     def __str__(self):
-        return self.userid,'reserved by',self.busid
+        return 'User number %s %s Bus number %s' %(self.userid,self.TICKET_STATUSES[self.status],self.busid)
